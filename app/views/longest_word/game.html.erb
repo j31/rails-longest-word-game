@@ -1,0 +1,29 @@
+
+<center>
+<h1>Longest Word Game</h1>
+
+<br><br>
+
+<%= render plain: (@start) %>
+
+<form action="/game" method="get">
+  <input type="hidden" name="size" value="10">
+  <input type="submit" value="Start Game">
+</form>
+
+<br>
+<%= @grid.join(' ') %>
+<br><br>
+
+<form action="/score" method="get">
+  <input type="text" name="guess" placeholder="your word...">
+  <input type="hidden" name="start" value=<%= Time.now.to_i %>>
+  <input type="hidden" name="grid" value=<%= @grid.join(',') %>>
+  <input type="submit">
+</form>
+
+<br><br>
+
+
+</center>
+
